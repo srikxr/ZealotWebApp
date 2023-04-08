@@ -36,7 +36,7 @@ const index = () => {
                 Zealot
             </h1> 
           
-            <div className='ml-[70%]'>
+            <div className='ml-[10%] md:ml-[60%] lg:ml-[70%]'>
                 <Link href="/Fan">
                   <button
                         
@@ -72,9 +72,9 @@ const index = () => {
                   Signup as a Fan
                 </button>
               </div>
-              <Link href="/Brand" className='align-middle mx-auto mt-[1%]'>
+              <Link href="/Brand" className='align-middle lg:mx-auto mt-[1%] ml-[1%] lg:ml-[0%]'>
                 <button className=''>
-                  <p className=" flex lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[9px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
+                  <p className=" flex lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[12px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
                     Not a Fan? Signup as a Brand
                   </p>
                 </button>
