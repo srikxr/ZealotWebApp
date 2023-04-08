@@ -1,12 +1,11 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+// pages/BrandRepresentative.js
+import React from 'react';
+import Header from '../../../components/Header'
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
-
-
+const index = () => {
+  
   const descriptions = [
     {
       Title: "Discover Authentic Content Creators",
@@ -28,15 +27,19 @@ export default function Home() {
     <div className=' w-screen h-full bg-white'>
        <header classname=" top-0 p-5 flex flex-row max-w-7xl mx-auto z-20 justify-center items-center align-middle">
         <div className='flex p-5 items-center justify-left md:justify-left ml-[5%] '>
-              <img 
-                src="https://zealot.s3.us-west-2.amazonaws.com/Screen_Shot_2023-02-24_at_2.30+1+(1).png"
-                className='w-[70px] h-[70px] flex'
-              />
+            <img 
+              src="https://zealot.s3.us-west-2.amazonaws.com/Screen_Shot_2023-02-24_at_2.30+1+(1).png"
+              className='w-[70px] h-[70px] flex'
+            />
+            
+            <h1 className='font-bold font-inter flex text-[20px]'>
+                Zealot
+            </h1> 
           
-              <div className='ml-[70%]'>
+            <div className='ml-[70%]'>
                 <Link href="/Fan">
                   <button
-                        className=' bg-gradient-to-r from-purple-500 to-rose-400 pt-2 pb-2 pl-4 pr-4 rounded-xl text-white font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
+                        className='border-2 border-gradient-to-r from-purple-500 to-rose-400 pt-2 pb-2 pl-4 pr-4 rounded-xl text-black font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
                           For Fans
                   </button>
                 </Link>
@@ -44,8 +47,8 @@ export default function Home() {
               <div className='ml-[1%]'>
                 <Link href="/Brand">
                   <button
-                        className='border-2 border-gradient-to-r from-purple-500 to-rose-400 pt-2 pb-2 pl-4 pr-4 rounded-xl text-black font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
-                          For Brands
+                        className=' bg-gradient-to-r from-purple-500 to-rose-400 pt-2 pb-2 pl-4 pr-4 rounded-xl text-white font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
+                        For Brands
                   </button>
                 </Link>
               </div>
@@ -70,17 +73,16 @@ export default function Home() {
               </div>
               <Link href="/Fan" className='align-middle mx-auto mt-[1%]'>
                 <button className=''>
-                    <p className=" flex lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[9px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
-                      Not a brand? Signup as a User
-                    </p>
-                  </button>
-                </Link>
+                  <p className=" flex lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[9px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
+                    Not a Brand? Signup as a Fan
+                  </p>
+                </button>
+              </Link>
 
           <div className='mt-[5%] text-left md:text-center md:items-center md:justify-center '>
             <div className=''>
               <h1 className='text-[25px] text-black font-semibold md:text-[40px] mt-[15%] md:mt-[5%] drop-shadow-xl'>
-                Boost Your Brand's Impact with Our Superfan Engagement Solutions
-              </h1>
+Collaborate with Brands You Love and Get Rewarded for Your Creativity with Zealot.              </h1>
             </div>
             <div className='flex items-left justify-left flex-col md:flex-row mt-[10%] md:mt-[0%] mb-[20%]'>
               {descriptions.map((description, i) => (
@@ -98,3 +100,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+export default index;
