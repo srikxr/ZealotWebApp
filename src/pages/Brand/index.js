@@ -70,9 +70,9 @@ const index = () => {
                   Signup as a Brand
                 </button>
               </div>
-              <Link href="/Fan" className='align-middle lg:mx-auto mt-[1%] ml-[1%] lg:ml-[0%]'>
+              <Link href="/Fan" className='align-middle lg:mx-auto mt-[1%]'>
                 <button className=''>
-                  <p className=" flex lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[12px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
+                  <p className=" flex xl:justify-center lg:justify-left md:justify-center justify-center lg:text-left md:text-left text-center font-light font-Inter text-[#706D6D] lg:text-[14px] md:text-[13px] text-[12px] lg:mt-[1%] md:mt-[2%] mt-[5%] hover:text-black underline">
                     Not a Brand? Signup as a Fan
                   </p>
                 </button>
