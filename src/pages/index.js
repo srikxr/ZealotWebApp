@@ -24,7 +24,7 @@ const index = () => {
     },
   ]
   return (
-    <div className=' w-screen h-full bg-white'>
+    <div className=' w-full h-screen lg:overflow-hidden overflow-scroll bg-white'>
        <header classname=" top-0 p-5 flex flex-row max-w-7xl mx-auto z-20 justify-center items-center align-middle">
         <div className='flex p-5 items-center justify-left md:justify-left ml-[5%] '>
             <img 
