@@ -61,7 +61,7 @@ const index = () => {
             
             <div className="w-[80%] md:w-[70%] mx-auto align-middle flex flex-col">
               <h1 className="font-bold text-black drop-shadow-lg md:text-[60px] text-[40px] items-center justify-center lg:justify-left md:justify-left justify-left md:text-center text-left flex z-0  content-left md:leading-[65px] leading-[45px]">
-              Unleash the Power of Your Brand's Superfans. 
+              Unleash the Power of Your Brand&apos;s Superfans. 
               </h1>
               <p className=" mt-[2%]  md:justify-center justify-center lg:text-center md:text-center text-left font-Amiri font-regular md:items-center  lg:text-[20px] md:text-[10px] text-[15px] text-gray-400">
                   Discover, engage, and collaborate with your most passionate fans to co-create authentic and high-impact content.              </p>
