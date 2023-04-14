@@ -1,10 +1,44 @@
 // pages/BrandFan.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { useUser } from '@auth0/nextjs-auth0/client'
+import { useRouter } from 'next/router';
+import axios from "axios";
+
+const getUserType = async (userId) => {
+  const res = await axios.get(`/api/getUserType?id=${userId}`);
+  return res.data.user_type;
+};
+
+const Index = () => {
+  // const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   if (isAuthenticated && user) {
+  //     (async () => {
+  //       const userType = await getUserType(user.sub);
+        
+  //       if (userType === "fan") {
+  //         router.push("/Fan/Missions");
+  //       } else if (userType === "user") {
+  //         router.push("/user");
+  //       } else {
+  //         // Handle other user types or errors
+  //       }
+  //     })();
+  //   }
+  // }, [isAuthenticated, user, router]);
 
 
-const index = () => {
-  
+  const { push } = useRouter()
+  const { isLoading, user, error } = useUser()
+
+  if (isLoading) return <h1>Loading...</h1>
+  const handleLogin = () => push('/api/auth/login')
+  const handleLogout = () => push('/api/auth/logout')
+
+
   const descriptions = [
     {
       Title: "Unleash Your Creativity",
@@ -27,8 +61,8 @@ const index = () => {
        <header classname=" top-0 p-5 flex flex-row max-w-7xl mx-auto z-20 justify-center items-center align-middle">
         <div className='flex p-5 items-center justify-left md:justify-left ml-[5%] '>
             <img 
-              src="https://zealot.s3.us-west-2.amazonaws.com/Screen_Shot_2023-02-24_at_2.30+1+(1).png"
-              className='w-[70px] h-[70px] flex'
+              src="https://zealot.s3.us-west-2.amazonaws.com/Group_17863-removebg-preview.png"
+              className='w-[40px] h-[50px] flex'
             />
             
             <h1 className='font-bold font-inter flex text-[20px]'>
@@ -66,7 +100,7 @@ const index = () => {
               <p className=" mt-[2%]  md:justify-center justify-center lg:text-center md:text-center text-left font-Amiri font-regular md:items-center  lg:text-[20px] md:text-[10px] text-[15px] text-gray-400">
               Collaborate with your favorite brands to co-create authentic content that makes an impact, and get rewarded along the way!              </p>
             <div className='xl:mt-[3%] lg:mt-[5%] md:mt-[5%] mt-[12%] lg:justify-left md:justify-center justify-left lg:text-left md:text-left text-left flex flex-row'>
-                <button
+                <button onClick={handleLogin}
                 className=' bg-gradient-to-r from-purple-500 to-rose-400 pt-2 pb-2 pl-4 pr-4 rounded-xl text-white font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
                   Signup as a Fan
                 </button>
@@ -102,4 +136,4 @@ const index = () => {
 }
 
 
-export default index;
+export default Index;
