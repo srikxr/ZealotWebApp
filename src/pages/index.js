@@ -1,5 +1,5 @@
 // pages/BrandRepresentative.js
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client'; // Update the import here
 import { useRouter } from 'next/router';
@@ -16,6 +16,19 @@ const Index = () => {
   const { isLoading, user, error } = useUser()
 
   if (isLoading) return <h1>Loading...</h1>
+
+  useEffect(() => {
+    console.log(user)
+    if (user)
+    {
+      const userType = getUserType(user.sub);
+      if (userType === "fan") {
+        push('/Fan/Missions');
+      } else if (userType === "brand") {
+        push('/Brand/Missions');
+      }
+    }
+  }, [user])
 
   const handleLogin = () => {
     if (user) {

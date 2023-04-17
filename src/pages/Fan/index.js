@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { useRouter } from 'next/router';
 import axios from "axios";
+import { handleLogin, handleLogout } from '@auth0/nextjs-auth0/client';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const getUserType = async (userId) => {
   const res = await axios.get(`/api/getUserType?id=${userId}`);
@@ -33,12 +36,21 @@ const Index = () => {
 
   const { push } = useRouter()
   const { isLoading, user, error } = useUser()
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
 
   if (isLoading) return <h1>Loading...</h1>
-  const handleLogin = () => push('/api/auth/login')
-  const handleLogout = () => push('/api/auth/logout')
+  const handleLogin = () => {
+    loginWithRedirect({
+      returnTo: "/Fan/Missions",
+    });
+  };
 
-
+  const handleLogout = () => {
+    logout({
+      returnTo: "/",
+    });
+  };
   const descriptions = [
     {
       Title: "Unleash Your Creativity",

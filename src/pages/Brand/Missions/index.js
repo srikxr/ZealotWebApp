@@ -15,7 +15,7 @@ export default function Index() {
         <div className="flex flex-row mt-[5%]">
          <p className="text-gray-700 text-3xl mb-16 font-bold">Active Missions</p>
          <div className='ml-[10%] md:ml-[60%] lg:ml-[70%]'>
-                <Link href="/Brand/Missions/setupMission">
+                <Link href="/Brand/Missions/SetupMission">
                   <button
                         className='border-2 border-gradient-to-r from-purple-500 to-rose-400 bg-[#6447D7] pt-2 pb-2 pl-4 pr-4 rounded-xl text-white font-bold shadow-2xl hover:cursor-grab  hover:scale-110 '>
                         Create a Mission +
